@@ -1,0 +1,86 @@
+import java.util.*;
+class Person{
+    private String name;
+    private String address;
+    public Person(String name,String address){
+        this.name=name;
+	this.address=address;
+    }
+    public String getName(){
+        return name;
+    }
+    public String getAddress(){
+        return address;
+    }
+    public void setAddress(String ad){
+        address=ad;
+    }
+    public String toString(){
+        return "Person [name= "+name+", address = "+address+"]";
+    }
+}
+class Student extends Person{
+    private String program;
+    private int year;
+    private double fee;
+    public Student(String name,String address,String program,int year,double fee){
+        super(name,address);
+	this.program=program;
+	this.year=year;
+	this.fee=fee;
+    }
+    public String getProgram(){
+        return program;
+    }
+    public void setProgram(String prg){
+        program=prg;
+    }
+    public int getYear(){
+        return year;
+    }
+    public void setYear(int yr){
+        year=yr;
+    }
+    public double getFee(){
+        return fee;
+    }
+    public void setFee(){
+        fee=fee;
+    }
+    public String toString(){
+        return "Student["+super.toString()+",program= "+program+",year= "+year+",fee= "+fee+"]";
+    }
+}
+class Staff extends Person{
+    private String school;
+    private double pay;
+    public Staff(String name,String address,String school,double pay){
+        super(name,address);
+        this.school=school;
+	this.pay=pay;
+    }
+    public String getSchool(){
+        return school;
+    }
+    public void setSchool(String sc){
+        school=sc;
+    }
+    public double getPay(){
+        return pay;
+    }
+    public void setPay(double p){
+        pay=p;
+    }
+    public String toString(){
+        return "Staff["+super.toString()+",school= "+school+",pay= "+pay+"]";
+    }
+}
+class q1{
+    public static void main(String[] args){
+        Scanner inp=new Scanner(System.in);
+	Student stud=new Student("Student1","Abu Dhabi","Computer Science",2,16000d);
+	Staff stf=new Staff("Staff1","Dubai","OOHS",4000.55d);
+	System.out.println(stud.toString());
+	System.out.println(stf.toString());
+    }
+}
